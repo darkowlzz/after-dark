@@ -1,5 +1,6 @@
 {{ define "header" }}
-  {{ partial "menu.html" . }}
+  <a href="/">{{ $.Param "site_title" }}</a>
+  <!--{{ partial "menu.html" . }}-->
 {{ end }}
 {{ define "main" }}
   <article itemscope itemtype="http://schema.org/BlogPosting">

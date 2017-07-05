@@ -146,6 +146,16 @@ Installation should complete in a matter of seconds.
 
 ## Customizing
 
+### Site Title
+
+after-dark is modified to have site title on post pages, instead of menu. Site
+title can be set by adding `site_title` under `params` in `config.toml` like:
+
+```toml
+[params]
+  site_title = "After-Dark"
+```
+
 ### Section Menu
 
 After Dark uses Hugo's [Section Menu for Lazy Bloggers](https://gohugo.io/extras/menus/#section-menu-for-the-lazy-blogger) to produce global site navigation if enabled.
