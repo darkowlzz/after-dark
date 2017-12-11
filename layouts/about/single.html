@@ -1,0 +1,33 @@
+{{ define "header" }}
+<a href="/">{{ $.Param "site_title" }}</a>
+<!--{{ partial "menu.html" . }}-->
+{{ end }}
+{{ define "main" }}
+  <article itemscope itemtype="http://schema.org/BlogPosting">
+    {{ template "_internal/schema.html" . }}
+    <header>
+      <h1 itemprop="headline">{{ .Title }}</h1>
+      <p class="muted">
+        <!-- Post metadata not required here. -->
+        <!-- {{ partial "post/meta.html" . }} -->
+      </p>
+    </header>
+    {{ if .Description }}
+      <blockquote itemprop="description">{{ .Description }}</blockquote>
+    {{ end }}
+    {{ partial "toc-maybe.html" . }}
+    <div itemprop="articleBody">
+      {{ .Content }}
+    </div>
+    <footer>
+      <hr>
+      <!-- Post date not required in this section. -->
+      <!-- {{ partial "post/byline.html" . }} -->
+      {{ partial "post/related-content.html" . }}
+    </footer>
+  </article>
+{{ end }}
+{{ define "footer" }}
+  {{ partial "powered-by.html" . }}
+{{ end }}
+
